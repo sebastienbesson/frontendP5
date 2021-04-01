@@ -13,8 +13,7 @@ const priceProduct1 = document.querySelector('#priceProduct1');
 container1.appendChild(priceProduct1);
 const idProduct1 = document.querySelector('#idProduct1');
 container1.appendChild(idProduct1);
-const variantProduct1 = document.querySelector('#variantProduct1');
-container1.appendChild(variantProduct1);
+
 
 fetch('http://localhost:3000/api/furniture')
   .then( response => response.json() )
@@ -24,10 +23,20 @@ fetch('http://localhost:3000/api/furniture')
     descriptionProduct1.innerHTML = data[0].description;
     priceProduct1.innerHTML = data[0].price;
     idProduct1.innerHTML = data[0]._id;
-    variantProduct1.innerHTML = data[0].varnish;
+    variant1Product1.innerHTML = data[0].varnish[0];
+    variant2Product1.innerHTML = data[0].varnish[1];
+    variant3Product1.innerHTML = data[0].varnish[2];
 });
 
-  
+const variant1Product1 = document.querySelector('#variant1Product1');
+
+
+
+
+
+
+
+
 const container2 = document.querySelector('#container2');
 const nameProduct2 = document.querySelector('#nameProduct2');
 const img2 = document.createElement('img');
@@ -38,8 +47,6 @@ const priceProduct2 = document.querySelector('#priceProduct2');
 container2.appendChild(priceProduct2);
 const idProduct2 = document.querySelector('#idProduct2');
 container2.appendChild(idProduct2);
-const variantProduct2 = document.querySelector('#variantProduct2');
-container2.appendChild(variantProduct2);
   
 fetch('http://localhost:3000/api/furniture')
   .then( response => response.json() )
@@ -49,7 +56,6 @@ fetch('http://localhost:3000/api/furniture')
     descriptionProduct2.innerHTML = data[1].description;
     priceProduct2.innerHTML = data[1].price;
     idProduct2.innerHTML = data[1]._id;
-    variantProduct2.innerHTML = data[1].varnish;
 });
 
 const container3 = document.querySelector('#container3');
@@ -62,8 +68,6 @@ const priceProduct3 = document.querySelector('#priceProduct3');
 container3.appendChild(priceProduct3);
 const idProduct3 = document.querySelector('#idProduct3');
 container3.appendChild(idProduct3);
-const variantProduct3 = document.querySelector('#variantProduct3');
-container3.appendChild(variantProduct3);
   
 fetch('http://localhost:3000/api/furniture')
   .then( response => response.json() )
@@ -73,7 +77,6 @@ fetch('http://localhost:3000/api/furniture')
     descriptionProduct3.innerHTML = data[2].description;
     priceProduct3.innerHTML = data[2].price;
     idProduct3.innerHTML = data[2]._id;
-    variantProduct3.innerHTML = data[2].varnish;
 });
 
 const container4 = document.querySelector('#container4');
@@ -83,11 +86,9 @@ container4.appendChild(img4);
 const descriptionProduct4 = document.querySelector('#descriptionProduct4');
 container4.appendChild(descriptionProduct4);
 const priceProduct4 = document.querySelector('#priceProduct4');
-container4.appendChild(priceProduct4);
+container4.appendChild(priceProduct4);  
 const idProduct4 = document.querySelector('#idProduct4');
 container4.appendChild(idProduct4);
-const variantProduct4 = document.querySelector('#variantProduct4');
-container4.appendChild(variantProduct4);
   
 fetch('http://localhost:3000/api/furniture')
   .then( response => response.json() )
@@ -97,7 +98,6 @@ fetch('http://localhost:3000/api/furniture')
     descriptionProduct4.innerHTML = data[3].description;
     priceProduct4.innerHTML = data[3].price;
     idProduct4.innerHTML = data[3]._id;
-    variantProduct4.innerHTML = data[3].varnish;
 });
 
 const container5 = document.querySelector('#container5');
@@ -110,8 +110,6 @@ const priceProduct5 = document.querySelector('#priceProduct5');
 container5.appendChild(priceProduct5);
 const idProduct5 = document.querySelector('#idProduct5');
 container5.appendChild(idProduct5);
-const variantProduct5 = document.querySelector('#variantProduct5');
-container5.appendChild(variantProduct5);
   
 fetch('http://localhost:3000/api/furniture')
   .then( response => response.json() )
@@ -121,10 +119,11 @@ fetch('http://localhost:3000/api/furniture')
     descriptionProduct5.innerHTML = data[4].description;
     priceProduct5.innerHTML = data[4].price;
     idProduct5.innerHTML = data[4]._id;
-    variantProduct5.innerHTML = data[4].varnish;
 });
 
-  
+
+
+
 
 
   
