@@ -1,3 +1,27 @@
+.mainIcone {
+  width: 50px;
+  height: 50px;
+  color: #6f42c1;
+}
+
+.fas.fa-shopping-cart {
+  color: #6f42c1;
+  width: 50px;
+  height: 50px;
+}
 h2 {
   color: green;
+}
+.rowPrice {
+  display: flex;
+  flex-direction: row;
+}
+.clickProduct {
+  color: red;
+  background-color: black;
+}
+img {
+  width: 150px;
+  height: 150px;
+  margin: auto;
 }
