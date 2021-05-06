@@ -1,27 +1,123 @@
-.mainIcone {
-  width: 50px;
-  height: 50px;
-  color: #6f42c1;
+body {
+  background-color: burlywood !important;
 }
 
-.fas.fa-shopping-cart {
-  color: #6f42c1;
-  width: 50px;
-  height: 50px;
+header {
+  background-color: rgb(238, 212, 178) !important;
+}
+
+#navbarContent {
+  text-align: right;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  color: black !important;
+}
+.card {
+  margin: 0 15px 15px 15px;
 }
 h2 {
-  color: green;
+  color: brown;
+  font-size: 30px;
 }
+
+h3 {
+  padding: 5px;
+  @media all and (min-width: 768px){
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
 .rowPrice {
-  display: flex;
-  flex-direction: row;
+  font-size: 25px;
+  color: brown;
 }
 .clickProduct {
-  color: red;
-  background-color: black;
+  color: white;
+  background-color: brown;
+  width: 30%;
+  margin: center;
+  border: brown;
+  @media all and (max-width: 320px){
+    width: 40%;
+  }
 }
 img {
   width: 150px;
   height: 150px;
   margin: auto;
+  @media all and (min-width: 768px){
+    width: 200px;
+    height: 200px;
+    margin: auto;
+  }
+  @media all and (min-width: 992px){
+    width: 250px;
+    height: 250px;
+    margin: auto;
+  }
+  @media all and (min-width: 1200px){
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
+}
+
+.ref {
+  text-decoration: underline;
+}
+
+.product {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.clickBasket {
+  font-size: x-large;
+  color: white;
+  background-color: brown;
+  width: 30%;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  border: brown;
+  @media all and (max-width: 425px){
+    width: 80%;
+  }
+}
+
+.clickBasket {
+  font-size: x-large;
+  color: white;
+  background-color: brown;
+  width: 30%;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  border: brown;
+  @media all and (max-width: 425px){
+    width: 80%;
+  }
+}
+
+.clickValid {
+  font-size: x-large;
+  color: white;
+  background-color: brown;
+  width: 30%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  border: brown;
+  @media all and (max-width: 425px){
+    width: 80%;
+  }
+}
+
+input {
+  margin-left: 10% !important;
+  background-color: black;
 }
