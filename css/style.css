@@ -1,4 +1,117 @@
-@charset "UTF-8";
+body {
+  background-color: burlywood !important;
+}
+
+header {
+  background-color: #eed4b2 !important;
+}
+
+#navbarContent {
+  text-align: right;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  color: black !important;
+}
+
+.card {
+  margin: 0 15px 15px 15px;
+}
+
+h2 {
+  color: brown;
+  font-size: 30px;
+}
+
+h3 {
+  padding: 5px;
+}
+@media all and (min-width: 768px) {
+  h3 {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+.rowPrice {
+  font-size: 25px;
+  color: brown;
+}
+
+.clickProduct {
+  color: white;
+  background-color: brown;
+  width: 30%;
+  margin: center;
+  border: brown;
+}
+@media all and (max-width: 320px) {
+  .clickProduct {
+    width: 40%;
+  }
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+@media all and (min-width: 768px) {
+  img {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+  }
+}
+@media all and (min-width: 992px) {
+  img {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+  }
+}
+@media all and (min-width: 1200px) {
+  img {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
+}
+
+.ref {
+  text-decoration: underline;
+}
+
+.product {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.introVarnish {
+  font-size: small;
+  font-weight: normal;
+}
+
+.clickBasket {
+  color: white;
+  background-color: brown;
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  border: brown;
+}
+@media all and (max-width: 425px) {
+  .clickBasket {
+    width: 50%;
+  }
+}
+
+input {
+  margin-left: 10% !important;
+  background-color: black;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -348,125 +461,6 @@ template {
 
 [hidden] {
   display: none !important;
-}
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-h1, .h1 {
-  font-size: 2.5rem;
-}
-
-h2, .h2 {
-  font-size: 2rem;
-}
-
-h3, .h3 {
-  font-size: 1.75rem;
-}
-
-h4, .h4 {
-  font-size: 1.5rem;
-}
-
-h5, .h5 {
-  font-size: 1.25rem;
-}
-
-h6, .h6 {
-  font-size: 1rem;
-}
-
-h2 {
-  color: green;
-}
-
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
-}
-
-.display-1 {
-  font-size: 6rem;
-  font-weight: 300;
-  line-height: 1.2;
-}
-
-.display-2 {
-  font-size: 5.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-}
-
-.display-3 {
-  font-size: 4.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-}
-
-.display-4 {
-  font-size: 3.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-}
-
-hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-small,
-.small {
-  font-size: 80%;
-  font-weight: 400;
-}
-
-mark,
-.mark {
-  padding: 0.2em;
-  background-color: #fcf8e3;
-}
-
-.list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
-
-.list-inline {
-  padding-left: 0;
-  list-style: none;
-}
-
-.list-inline-item {
-  display: inline-block;
-}
-.list-inline-item:not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.initialism {
-  font-size: 90%;
-  text-transform: uppercase;
-}
-
-.blockquote {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-.blockquote-footer {
-  display: block;
-  font-size: 80%;
-  color: #6c757d;
-}
-.blockquote-footer::before {
-  content: "— ";
 }
 
 .img-fluid {
@@ -9931,37 +9925,6 @@ h3 {
     color: inherit;
     border-color: #dee2e6;
   }
-}
-.mainIcone {
-  width: 50px;
-  height: 50px;
-  color: #6f42c1;
-}
-
-.fas.fa-shopping-cart {
-  color: #6f42c1;
-  width: 50px;
-  height: 50px;
-}
-
-h2 {
-  color: green;
-}
-
-.rowPrice {
-  display: flex;
-  flex-direction: row;
-}
-
-.clickProduct {
-  color: red;
-  background-color: black;
-}
-
-img {
-  width: 150px;
-  height: 150px;
-  margin: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
