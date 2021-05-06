@@ -88,22 +88,52 @@ img {
   padding-top: 10px;
 }
 
-.introVarnish {
-  font-size: small;
-  font-weight: normal;
-}
-
 .clickBasket {
+  font-size: x-large;
   color: white;
   background-color: brown;
   width: 30%;
   margin: auto;
+  padding: 10px;
   text-align: center;
   border: brown;
 }
 @media all and (max-width: 425px) {
   .clickBasket {
-    width: 50%;
+    width: 80%;
+  }
+}
+
+.clickBasket {
+  font-size: x-large;
+  color: white;
+  background-color: brown;
+  width: 30%;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  border: brown;
+}
+@media all and (max-width: 425px) {
+  .clickBasket {
+    width: 80%;
+  }
+}
+
+.clickValid {
+  font-size: x-large;
+  color: white;
+  background-color: brown;
+  width: 30%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  border: brown;
+}
+@media all and (max-width: 425px) {
+  .clickValid {
+    width: 80%;
   }
 }
 
