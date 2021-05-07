@@ -17,10 +17,10 @@ fetch('http://localhost:3000/api/furniture/'+id)
     <h4>${data.price}€</h4>
     </div>
     <p>Référence: <div class="ref">${data._id}</div></p>
-    <select name="varnish">
+    <p><select name="varnish">
     ${data.varnish.map(varnish =>
       "<option value='"+varnish+"'>"+varnish+"</option>")}
-    </select>
+    </select></p>
     
     <button class="clickValid">Je valide mon choix</button>
     </div>      
