@@ -6,9 +6,24 @@ header {
   background-color: #eed4b2 !important;
 }
 
+.navbar-toggler {
+  display: flex;
+}
+@media all and (min-width: 768px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+
 #navbarContent {
   text-align: right;
   font-weight: bold;
+  display: none;
+}
+@media all and (min-width: 768px) {
+  #navbarContent {
+    display: flex;
+  }
 }
 
 .navbar-nav {

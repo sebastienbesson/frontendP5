@@ -14,7 +14,7 @@ fetch('http://localhost:3000/api/furniture/'+id)
     <img src="${data.imageUrl}"></img>
     <h3>${data.description}</h3>
     <div class="rowPrice text-center">
-    <h4>${data.price}€</h4>
+    <h4>${data.price}€</h4>h
     </div>
     <p>Référence: <div class="ref">${data._id}</div></p>
     <p><select name="varnish">
@@ -29,5 +29,6 @@ fetch('http://localhost:3000/api/furniture/'+id)
 container.insertAdjacentHTML("afterbegin", allcolumns)  
 
 })
+
 
 
