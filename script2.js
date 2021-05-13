@@ -10,25 +10,36 @@ fetch('http://localhost:3000/api/furniture/'+id)
   let container = document.getElementById('container');
   let allcolumns =  `
     <div class="product">
-    <h2 class="card-title">${data.name}</h2>
+    <h2 class="card-title" id="nameProduct">${data.name}</h2>
     <img src="${data.imageUrl}"></img>
-    <h3>${data.description}</h3>
+    <h3 id="description">${data.description}</h3>
     <div class="rowPrice text-center">
-    <h4>${data.price}€</h4>h
+    <h4 id="price">${data.price}€</h4>
     </div>
     <p>Référence: <div class="ref">${data._id}</div></p>
-    <p><select name="varnish">
+    <p><select name="varnish" id="varnish">
     ${data.varnish.map(varnish =>
       "<option value='"+varnish+"'>"+varnish+"</option>")}
     </select></p>
-    
-    <button class="clickValid">Je valide mon choix</button>
-    </div>      
+    </div>
     `
 
 container.insertAdjacentHTML("afterbegin", allcolumns)  
 
 })
 
+const finalProduct = JSON.parse(localStorage.getItem("productUnit"));
 
+clickValid.onclick = ()=> {
+  const productUnit = {
+    name: "Coffee Table",
+    price: "59900",
+    ref: "5be9cc611c9d440000c1421e"
+  }
+localStorage.setItem("productUnit",JSON.stringify(productUnit));
+}
+
+cancelChoice.onclick = ()=> {
+  localStorage.clear();
+}
 

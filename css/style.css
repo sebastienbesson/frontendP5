@@ -103,7 +103,14 @@ img {
   padding-top: 10px;
 }
 
-.clickBasket {
+.buttons-position {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+#clickValid {
+  align-items: center;
   font-size: x-large;
   color: white;
   background-color: brown;
@@ -114,47 +121,31 @@ img {
   border: brown;
 }
 @media all and (max-width: 425px) {
-  .clickBasket {
+  #clickValid {
     width: 80%;
   }
 }
 
-.clickBasket {
+#cancelChoice {
   font-size: x-large;
   color: white;
   background-color: brown;
   width: 30%;
   margin: auto;
+  margin-top: 5%;
   padding: 10px;
   text-align: center;
   border: brown;
 }
 @media all and (max-width: 425px) {
-  .clickBasket {
+  #cancelChoice {
     width: 80%;
   }
 }
-
-.clickValid {
-  font-size: x-large;
-  color: white;
-  background-color: brown;
-  width: 30%;
-  margin: auto;
-  margin-top: 20px;
-  padding: 10px;
-  text-align: center;
-  border: brown;
-}
-@media all and (max-width: 425px) {
-  .clickValid {
-    width: 80%;
+@media all and (min-width: 768px) {
+  #cancelChoice {
+    margin-top: 5px;
   }
-}
-
-input {
-  margin-left: 10% !important;
-  background-color: black;
 }
 
 /*!

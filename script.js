@@ -8,7 +8,7 @@ fetch('http://localhost:3000/api/furniture')
      
     return`
         
-          <div class="col-12 col-md-6 mt-4 mt-md-0 p-md-5">
+          <div class="col-12 col-lg-6 mt-4 mt-md-0 p-md-5">
             <div class="card text-center">
             <div class="card-body">
             <h2 class="card-title">${aData.name}</h2>
