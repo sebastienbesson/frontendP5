@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/style.css"/> 
 <title>Panier</title>
 </head>
 <body>
@@ -23,7 +23,24 @@
         </div>
     </nav>
 </header>
-<div id="basket"></div>
+<h1 class="card text-center" id="basketTitle">Mon Panier:</h1>
+
+<div id="container" class="row"></div>
+
+<form id="validez">
+    <label for="lastName">Votre nom:</label><br>
+    <input type="text" name="lastName" placeholder="nom" id="lastName"><br>
+    <label for="firstName">Votre prénom:</label><br>
+    <input type="text" name="firstName" placeholder="prénom" id="firstName"><br>
+    <label for="email">Votre e-mail:</label><br>
+    <input type="email" name="email" placeholder="email" id="email"><br>
+    <input type="submit" id="basketButton" value="validez">
+    <p id="error"></p>
+</form></div>
+
+
+
+
 
 <script type="text/javascript" src="script3.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

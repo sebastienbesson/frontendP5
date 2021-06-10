@@ -26,6 +26,11 @@ header {
   color: black !important;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card {
   margin: 0 15px 15px 15px;
 }
@@ -86,13 +91,11 @@ img {
   padding-top: 10px;
 }
 
-.buttons-position {
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
+#buttonp2 {
+  text-align: center;
 }
+
 #clickValid {
-  align-items: center;
   font-size: x-large;
   color: white;
   background-color: brown;
@@ -106,21 +109,58 @@ img {
   }
 }
 
-#cancelChoice {
-  font-size: x-large;
-  color: white;
-  background-color: brown;
-  width: 30%;
-  margin: auto;
-  margin-top: 5%;
-  padding: 10px;
+h1 {
+  font-size: large;
+  padding: 5px;
+  margin-top: 5px;
+  background-color: rgb(238, 212, 178);
+}
+
+
+
+#basketTitle {
+  background-color: burlywood;
+  border: none;
+  font-size: 35px;
+}
+
+#validez {
   text-align: center;
-  border: brown;
-  @media all and (max-width: 425px){
-    width: 80%;
-  }
+  background-color: white;
+  margin: 5% !important;
   @media all and (min-width: 768px){
-    margin-top: 5px;
+  margin: 0 30% 5% 30%!important;
   }
+  @media all and (min-width: 1024px){
+  margin: 0 35% 5% 35%!important;
+  }
+  @media all and (min-width: 2560px){
+  margin: 0 40% 5% 40%!important;
+  }  
 }
 
+label {
+  font-weight: bold;
+}
+input {
+  border: none;
+  background-color: rgb(226, 204, 175);
+  text-align: center;
+}
+
+#basketButton {
+  color: white;
+  font-size: x-large;
+  background-color: brown;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+#error {
+  color: red;
+  background-color: white;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 15px;
+
+}

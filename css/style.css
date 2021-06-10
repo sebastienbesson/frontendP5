@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: burlywood !important;
 }
@@ -28,6 +29,11 @@ header {
 
 .navbar-nav {
   color: black !important;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -103,7 +109,11 @@ img {
   padding-top: 10px;
 }
 
-.clickBasket {
+#buttonp2 {
+  text-align: center;
+}
+
+#clickValid {
   font-size: x-large;
   color: white;
   background-color: brown;
@@ -114,29 +124,69 @@ img {
   border: brown;
 }
 @media all and (max-width: 425px) {
-  .clickBasket {
+  #clickValid {
     width: 80%;
   }
 }
 
-.clickValid {
-  font-size: x-large;
-  color: white;
-  background-color: brown;
-  width: 30%;
-  margin: auto;
-  margin-top: 20px;
-  padding: 10px;
+h1 {
+  font-size: large;
+  padding: 5px;
+  margin-top: 5px;
+  background-color: #eed4b2;
+}
+
+#basketTitle {
+  background-color: burlywood;
+  border: none;
+  font-size: 35px;
+}
+
+#validez {
   text-align: center;
-  border: brown;
-  @media all and (max-width: 425px) {
-    width: 80%;
+  background-color: white;
+  margin: 5% !important;
+}
+@media all and (min-width: 768px) {
+  #validez {
+    margin: 0 30% 5% 30% !important;
   }
+}
+@media all and (min-width: 1024px) {
+  #validez {
+    margin: 0 35% 5% 35% !important;
+  }
+}
+@media all and (min-width: 2560px) {
+  #validez {
+    margin: 0 40% 5% 40% !important;
+  }
+}
+
+label {
+  font-weight: bold;
 }
 
 input {
-  margin-left: 10% !important;
-  background-color: black;
+  border: none;
+  background-color: #e2ccaf;
+  text-align: center;
+}
+
+#basketButton {
+  color: white;
+  font-size: x-large;
+  background-color: brown;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+#error {
+  color: red;
+  background-color: white;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
 /*!
@@ -145,6 +195,37 @@ input {
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 *,
 *::before,
 *::after {
@@ -459,6 +540,121 @@ template {
   display: none !important;
 }
 
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1, .h1 {
+  font-size: 2.5rem;
+}
+
+h2, .h2 {
+  font-size: 2rem;
+}
+
+h3, .h3 {
+  font-size: 1.75rem;
+}
+
+h4, .h4 {
+  font-size: 1.5rem;
+}
+
+h5, .h5 {
+  font-size: 1.25rem;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-2 {
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-3 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+small,
+.small {
+  font-size: 80%;
+  font-weight: 400;
+}
+
+mark,
+.mark {
+  padding: 0.2em;
+  background-color: #fcf8e3;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+.list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+.blockquote {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.blockquote-footer {
+  display: block;
+  font-size: 80%;
+  color: #6c757d;
+}
+.blockquote-footer::before {
+  content: "— ";
+}
+
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -558,6 +754,23 @@ pre code {
     max-width: 1140px;
   }
 }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.no-gutters > .col,
+.no-gutters > [class*=col-] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .col-xl,
 .col-xl-auto, .col-xl-12, .col-xl-11, .col-xl-10, .col-xl-9, .col-xl-8, .col-xl-7, .col-xl-6, .col-xl-5, .col-xl-4, .col-xl-3, .col-xl-2, .col-xl-1, .col-lg,
 .col-lg-auto, .col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1, .col-md,
@@ -4002,7 +4215,6 @@ input[type=button].btn-block {
   .navbar-expand-sm {
     flex-flow: row nowrap;
     justify-content: flex-start;
-    flex-basis: auto;
   }
   .navbar-expand-sm .navbar-nav {
     flex-direction: row;
@@ -4025,6 +4237,13 @@ input[type=button].btn-block {
   .navbar-expand-sm .navbar-nav-scroll {
     overflow: visible;
   }
+  .navbar-expand-sm .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar-expand-sm .navbar-toggler {
+    display: none;
+  }
 }
 @media (max-width: 767.98px) {
   .navbar-expand-md > .container,
@@ -4041,7 +4260,6 @@ input[type=button].btn-block {
   .navbar-expand-md {
     flex-flow: row nowrap;
     justify-content: flex-start;
-    flex-basis: auto;
   }
   .navbar-expand-md .navbar-nav {
     flex-direction: row;
@@ -4064,6 +4282,13 @@ input[type=button].btn-block {
   .navbar-expand-md .navbar-nav-scroll {
     overflow: visible;
   }
+  .navbar-expand-md .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar-expand-md .navbar-toggler {
+    display: none;
+  }
 }
 @media (max-width: 991.98px) {
   .navbar-expand-lg > .container,
@@ -4080,7 +4305,6 @@ input[type=button].btn-block {
   .navbar-expand-lg {
     flex-flow: row nowrap;
     justify-content: flex-start;
-    flex-basis: auto;
   }
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
@@ -4103,6 +4327,13 @@ input[type=button].btn-block {
   .navbar-expand-lg .navbar-nav-scroll {
     overflow: visible;
   }
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar-expand-lg .navbar-toggler {
+    display: none;
+  }
 }
 @media (max-width: 1199.98px) {
   .navbar-expand-xl > .container,
@@ -4119,7 +4350,6 @@ input[type=button].btn-block {
   .navbar-expand-xl {
     flex-flow: row nowrap;
     justify-content: flex-start;
-    flex-basis: auto;
   }
   .navbar-expand-xl .navbar-nav {
     flex-direction: row;
@@ -4142,11 +4372,17 @@ input[type=button].btn-block {
   .navbar-expand-xl .navbar-nav-scroll {
     overflow: visible;
   }
+  .navbar-expand-xl .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar-expand-xl .navbar-toggler {
+    display: none;
+  }
 }
 .navbar-expand {
   flex-flow: row nowrap;
   justify-content: flex-start;
-  flex-basis: auto;
 }
 .navbar-expand > .container,
 .navbar-expand > .container-fluid,
@@ -4177,6 +4413,13 @@ input[type=button].btn-block {
 }
 .navbar-expand .navbar-nav-scroll {
   overflow: visible;
+}
+.navbar-expand .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+}
+.navbar-expand .navbar-toggler {
+  display: none;
 }
 
 .navbar-light .navbar-brand {
