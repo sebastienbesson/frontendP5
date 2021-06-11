@@ -1,17 +1,19 @@
-localStorage.setItem("productsUnit", JSON.parse(currentProduct));
+let productsUnit = localStorage.getItem("productsUnit");
+console.log(productsUnit);
+let currentProduct = JSON.parse(productsUnit);
 
 let container = document.getElementById('container');
 
-let allcolumns = productUnitJSON(productUnitJSON => {
+let allcolumns = currentProduct.map(aCurrentProduct => {
      
- `    
+ return`    
   <div class="col-12 col-md-6 mt-4 mt-md-0 p-md-5">
     <div class="card text-center">
       <div class="card-body">
-        <h2 class="card-title">${productUnitJSON.name}</h2>
-        <img src="${productUnitJSON.imageUrl}"></img>
+        <h2 class="card-title">${aCurrentProduct.name}</h2>
+        <img src="${aCurrentProduct.image}"></img>
         <div class="rowPrice text-center">
-            <h4>${productUnitJSON.price}€</h4>
+            <h4>${aCurrentProduct.price}€</h4>
         </div>
       </div>
     </div>
