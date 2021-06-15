@@ -5,7 +5,7 @@ let currentProduct = JSON.parse(productsUnit);
 let container = document.getElementById('container');
 
 let allcolumns = currentProduct.map(aCurrentProduct => {
-     
+   
  return`    
   <div class="col-12 col-md-6 mt-4 mt-md-0 p-md-5">
     <div class="card text-center">
@@ -15,17 +15,42 @@ let allcolumns = currentProduct.map(aCurrentProduct => {
         <div class="rowPrice text-center">
             <h4>${aCurrentProduct.price}€</h4>
         </div>
+        <button id="clear">Supprimer l'article du panier</button>
       </div>
     </div>
   </div>
  `
-  
+ 
 }).join("")
-container.insertAdjacentHTML("afterbegin",allcolumns)
 
+container.insertAdjacentHTML("afterbegin",allcolumns)
+clear.onclick = () => {
+  let currentProduct = JSON.stringify(productsUnit);
+  localStorage.removeItem("productsUnit");
+  document.location.reload();  
+}  
+
+console.log(currentProduct);
+let totalPrice = [];
+for (let p = 0; p < currentProduct.length; p++){
+  let totalPriceBasket = currentProduct[p].price;
+  totalPrice.push(totalPriceBasket);
+  console.log(totalPrice);
+}
+
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+const finalPrice = totalPrice.reduce(reducer, 0);
+console.log(finalPrice);
+
+const showFinalPrice = `
+<div class="Finalprice col-12 text-center">Mon total achat est de: <br>
+<H4>${finalPrice} €</H4>
+</div>
+`
+container.insertAdjacentHTML("beforeend", showFinalPrice);
 //formulaire
 
-document.getElementById("validez").addEventListener("submit", function(e){
+document.getElementById("validate").addEventListener("submit", function(e){
 
 var error;
 var lastName = document.getElementById("lastName");
@@ -64,7 +89,7 @@ function lastNameValid(lastName){
 }
 
 function firstNameValid(firstName){
-  return /^[a-aA-Z]+$/.test(firstName);
+  return /^[a-zA-Z]+$/.test(firstName);
 }
 
 function emailValid(email){

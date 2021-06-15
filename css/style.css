@@ -142,23 +142,28 @@ h1 {
   font-size: 35px;
 }
 
-#validez {
+.Finalprice {
+  text-align: center;
+  font-weight: bold;
+}
+
+#validate {
   text-align: center;
   background-color: white;
   margin: 5% !important;
 }
 @media all and (min-width: 768px) {
-  #validez {
+  #validate {
     margin: 0 30% 5% 30% !important;
   }
 }
 @media all and (min-width: 1024px) {
-  #validez {
+  #validate {
     margin: 0 35% 5% 35% !important;
   }
 }
 @media all and (min-width: 2560px) {
-  #validez {
+  #validate {
     margin: 0 40% 5% 40% !important;
   }
 }

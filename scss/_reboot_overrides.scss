@@ -116,15 +116,18 @@ h1 {
   background-color: rgb(238, 212, 178);
 }
 
-
-
 #basketTitle {
   background-color: burlywood;
   border: none;
   font-size: 35px;
 }
 
-#validez {
+.Finalprice {
+  text-align: center;
+  font-weight: bold;
+}
+
+#validate {
   text-align: center;
   background-color: white;
   margin: 5% !important;
