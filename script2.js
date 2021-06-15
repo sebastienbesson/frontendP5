@@ -19,15 +19,11 @@ fetch('http://localhost:3000/api/furniture/'+id)
   let currentProduct = localStorage.getItem("productsUnit");
   if(!currentProduct){
     currentProduct= [];
-
   }else{currentProduct= JSON.parse(currentProduct)};
   currentProduct.push(productUnit);
   localStorage.setItem("productsUnit", JSON.stringify(currentProduct));
   
-
-  }
-  
-
+  } 
 
   let container = document.getElementById('container');
   let allcolumns =  `
