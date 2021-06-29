@@ -8,7 +8,7 @@ let allcolumns = currentProduct.map(aCurrentProduct => {
    
  return`    
   <div class="col-12 col-md-6 mt-4 mt-md-0 p-md-5">
-    <div class="card text-center">
+    <div class="card text-center">  
       <div class="card-body">
         <h2 class="card-title">${aCurrentProduct.name}</h2>
         <img src="${aCurrentProduct.image}"></img>
@@ -62,7 +62,7 @@ for (let r = 0; r < currentProduct.length; r++){
 
 
 //vider le panier
-/*
+
 const clearBasket = `
 <button class="ClearBasket col-12 text-center">Vider le panier</button>
 `
@@ -74,7 +74,7 @@ clearAllBasket.addEventListener('click', (e) => {
   alert("le panier est vide");
   window.location.href="panier.html";  
 });
-*/
+
 //formulaire
 
 document.getElementById("validate").addEventListener("submit", function(e){
@@ -149,17 +149,16 @@ if (error) {
       .then(function(finalSend){
         console.log('tout bon');
         console.log(finalSend);
+        console.log('je veux l id de la commande');
+        console.log(finalSend.orderId);
+        localStorage.setItem("commandId", finalSend.orderId);
+        console.log(finalPrice);
+        localStorage.setItem("totalCommand", finalPrice);
+        window.location = "commande.html";
       })
+      
     }    
 });
-/*
-let contact = {
-  lastName: lastName.value,
-  firstName: firstName.value
-}
-console.log(contact);
-*/
-
 
 function lastNameValid(lastName){
   return /^[A-Z]+$/.test(lastName);
@@ -181,34 +180,7 @@ function cityValid(city){
   return /^[A-Za-z'\.\-\s\,]+$/.test(city);
 };
 
-//premier essai fetch post
-function send(e) {
-  e.preventDefault();
-  fetch('http://localhost:3000/api/furniture/order', {
-    method: "POST",
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(totalProducts)
-  })
-  .then(function(res) {
-    if (res.ok) {
-      return res.json();
-    }
-  })
-  .then(function(totalProducts) {
-    console.log('tout bon', finalSend);
-  });
-} 
 
-//deuxieme essai fetch post
-
-    
-  
-
-
-  
 
 
 
