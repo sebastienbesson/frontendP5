@@ -4,26 +4,15 @@ body {
 
 header {
   background-color: rgb(238, 212, 178) !important;
-}
-
-.navbar-toggler {
-  display: flex;
-  @media all and (min-width: 768px){
-    display: none;
-  }
-}
-
-#navbarContent {
-  text-align: right;
-  font-weight: bold;
-  display: none;
-  @media all and (min-width: 768px){
-    display: flex;
-  }
+  width: 100%;
 }
 
 .navbar-nav {
   color: black !important;
+}
+
+.nav-link {
+  font-weight: bold;
 }
 
 .row {
@@ -32,11 +21,15 @@ header {
 }
 
 .card {
-  margin: 0 15px 15px 15px;
+  margin: 15px 15px 15px 15px;
 }
+
 h2 {
   color: brown;
-  font-size: 30px;
+  @media all and (min-width: 1024px){
+    font-size: 25px !important;
+  }
+  font-weight: bold !important;
 }
 
 h3 {
@@ -51,16 +44,25 @@ h3 {
   font-size: 25px;
   color: brown;
 }
+
+h4 {
+  font-weight: bold !important;
+  font-size: 40px !important;
+}
+
+p {
+  margin-bottom: 0% !important;
+}
+
 .clickProduct {
   color: white;
+  font-size: 40px;
+  font-weight: bold;
   background-color: brown;
-  width: 30%;
-  margin: center;
+  width: 80% !important;
   border: brown;
-  @media all and (max-width: 320px){
-    width: 40%;
-  }
 }
+
 img {
   width: 150px;
   height: 150px;
@@ -84,11 +86,41 @@ img {
 
 .ref {
   text-decoration: underline;
+  margin: 5%;
+  @media all and (min-width: 768px){
+    margin: 3%;
+  }
+  @media all and (min-width: 1024px){
+    margin: 1%;
+  }
+}
+
+#container {
+  background-color: burlywood;
 }
 
 .product {
+  background-color: white;
   text-align: center;
-  padding-top: 10px;
+  padding: 10px;
+  @media all and (min-width: 768px){
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+#nameProduct {
+  font-size: 40px !important;
+}
+
+#chooseVarnish {
+  font-size: 20px;
+  color: brown;
+  font-weight: bold;
+}
+
+#varnish {
+  font-size: 15px;
 }
 
 #buttonp2 {
@@ -100,7 +132,7 @@ img {
   color: white;
   background-color: brown;
   width: 30%;
-  margin: auto;
+  margin: 2% 5% 5% 5%;
   padding: 10px;
   text-align: center;
   border: brown;
@@ -122,9 +154,26 @@ h1 {
   font-size: 35px;
 }
 
-.Finalprice {
+#basketNameProduct {
+  color: brown;
+  @media all and (min-width: 768px) and (max-width: 768px){
+    font-size: 15px !important;
+  }
+  font-weight: bold !important;
+}
+
+.finalPrice {
   text-align: center;
   font-weight: bold;
+}
+
+.clearBasket {
+  color: white;
+  font-weight: bold;
+  font-size: 35px;
+  border: none;
+  background-color: brown;
+  margin: 10px;
 }
 
 #validate {
@@ -165,5 +214,26 @@ input {
   font-size: large;
   font-weight: bold;
   margin-top: 15px;
+}
 
+.command {
+  background-color: white !important;
+  margin: 30px;
+  h2 {
+    color: black;
+    @media all and (max-width: 320px){
+      font-size: 1.5rem !important;
+    }
+  }
+  h4 {
+    font-size: 2rem !important;
+  }
+  p {
+    font-weight: bold;
+  }
+}
+
+#returnMainPage {
+  color: white;
+  background-color: brown;
 }

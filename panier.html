@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <link rel="stylesheet" href="css/style.css"/> 
 <title>Panier</title>
 </head>
@@ -10,7 +10,9 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-light">
         <a class="navbar-brand font-weight-bold font-italic" href="index.html">Orinoco</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"><span class="navbar-toggler-icon"></span></button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div id="navbarContent" class="collapse navbar-collapse text-md-right">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -23,30 +25,26 @@
         </div>
     </nav>
 </header>
-<h1 class="card text-center" id="basketTitle">Mon Panier:</h1>
+<h1 class="card text-center" id="basketTitle">Mon Panier</h1>
 
 <div id="container" class="row"></div>
 
 <div>
 <form id="validate">
     <label for="lastName">Votre nom:</label><br>
-    <input type="text" name="lastName" placeholder="nom" id="lastName"><br>
+        <input type="text" name="lastName" placeholder="nom" id="lastName"><br>
     <label for="firstName">Votre prénom:</label><br>
-    <input type="text" name="firstName" placeholder="prénom" id="firstName"><br>
+        <input type="text" name="firstName" placeholder="prénom" id="firstName"><br>
     <label for="email">Votre e-mail:</label><br>
-    <input type="email" name="email" placeholder="e-mail" id="email"><br>
+        <input type="email" name="email" placeholder="e-mail" id="email"><br>
     <label for="address">Votre adresse:</label><br>
-    <input type="text" name="address" placeholder="adresse" id="address"><br>
+        <input type="text" name="address" placeholder="adresse" id="address"><br>
     <label for="city">Votre ville:</label><br>
-    <input type="text" name="city" placeholder="ville" id="city"><br>
+        <input type="text" name="city" placeholder="ville" id="city"><br>
     <input type="submit" id="basketButton" value="validez">
     <p id="error"></p>
-    </form>
+</form>
 </div>
-
-
-
-
 
 <script type="text/javascript" src="script3.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
