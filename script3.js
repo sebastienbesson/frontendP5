@@ -51,7 +51,7 @@ const showFinalPrice = `
 `
 container.insertAdjacentHTML("beforeend", showFinalPrice);
 
-//Récupération des id des produits sélectionnés
+//Récupération des produits sélectionnés
 
 let totalProducts = [];
 for (let r = 0; r < currentProduct.length; r++){
