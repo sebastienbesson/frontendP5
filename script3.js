@@ -1,6 +1,13 @@
+//Récupération des clés/valeurs localstorage
+
 let productsUnit = localStorage.getItem("productsUnit");
 console.log(productsUnit);
+
+//Création d'un tableau regroupant les produits sélectionnés
+
 let currentProduct = productsUnit?JSON.parse(productsUnit):[];
+
+//Mise en place et affichage HTML des produits
 
 let container = document.getElementById('container');
 
@@ -10,29 +17,19 @@ let allcolumns = currentProduct.map(aCurrentProduct => {
   <div class="col-12 col-md-6 mt-4 mt-md-0 p-md-5">
     <div class="card text-center">  
       <div class="card-body">
-        <h2 class="card-title">${aCurrentProduct.name}</h2>
+        <h2 class="card-title" id="basketNameProduct">${aCurrentProduct.name}</h2>
         <img src="${aCurrentProduct.image}"></img>
-        <div class="rowPrice text-center">
-            <h4>${aCurrentProduct.price}€</h4>
-        </div>
+        <div class="rowPrice text-center"><h4>${aCurrentProduct.price}€</h4></div>
       </div>  
     </div>
   </div>
  `
- 
 }).join("")
 
 container.insertAdjacentHTML("afterbegin",allcolumns)
 
-// Supprimer un produit du panier
-/*
-clear.onclick = () => {
-  let currentProduct = JSON.stringify(productsUnit);
-  localStorage.removeItem("productsUnit");
-  document.location.reload();  
-}  
-*/
-//montant total du panier
+//Calcul du montant total du panier
+
 console.log(currentProduct);
 let totalPrice = [];
 for (let p = 0; p < currentProduct.length; p++){
@@ -45,14 +42,17 @@ const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const finalPrice = totalPrice.reduce(reducer, 0);
 console.log(finalPrice);
 
+//Affichage HTML du montant total du panier
+
 const showFinalPrice = `
-<div class="Finalprice col-12 text-center">Mon total achat est de: <br>
+<div class="finalPrice col-12 text-center">Mon total achat est de: <br>
 <H4>${finalPrice} €</H4>
 </div>
 `
 container.insertAdjacentHTML("beforeend", showFinalPrice);
 
-//récupération des id
+//Récupération des id des produits sélectionnés
+
 let totalProducts = [];
 for (let r = 0; r < currentProduct.length; r++){
   let totalProductsBasket = currentProduct[r].ref;
@@ -60,14 +60,15 @@ for (let r = 0; r < currentProduct.length; r++){
   console.log(totalProducts);
 }
 
-
-//vider le panier
+//Suppression du contenu du panier
 
 const clearBasket = `
-<button class="ClearBasket col-12 text-center">Vider le panier</button>
+<button class="clearBasket col-12 text-align">Vider le panier</button>
 `
 container.insertAdjacentHTML("beforeend", clearBasket);
-const clearAllBasket = document.querySelector(".ClearBasket");
+
+const clearAllBasket = document.querySelector(".clearBasket");
+
 clearAllBasket.addEventListener('click', (e) => {
   e.preventDefault;
   localStorage.removeItem("productsUnit");
@@ -75,12 +76,11 @@ clearAllBasket.addEventListener('click', (e) => {
   window.location.href="panier.html";  
 });
 
-//formulaire
+//Création du formulaire
 
 document.getElementById("validate").addEventListener("submit", function(e){
 
 var error;
-
 var lastName = document.getElementById("lastName");
 var firstName = document.getElementById("firstName");
 var email = document.getElementById("email");
@@ -134,7 +134,9 @@ if (error) {
     }
   }
   console.log(finalSend);
-  
+
+//Envoi des données du formulaire et des produits sélectionnés avec fetch
+
   fetch('http://localhost:3000/api/furniture/order', {
         method: "POST",
         headers:{
@@ -147,9 +149,7 @@ if (error) {
         return response.json()
       })
       .then(function(finalSend){
-        console.log('tout bon');
         console.log(finalSend);
-        console.log('je veux l id de la commande');
         console.log(finalSend.orderId);
         localStorage.setItem("commandId", finalSend.orderId);
         console.log(finalPrice);
@@ -159,6 +159,8 @@ if (error) {
       
     }    
 });
+
+//Vérification avec Regex des données du formulaire
 
 function lastNameValid(lastName){
   return /^[A-Z]+$/.test(lastName);
