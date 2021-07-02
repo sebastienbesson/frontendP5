@@ -15,8 +15,8 @@ fetch('http://localhost:3000/api/furniture')
           <div class="card-body">
             <h2 class="card-title">${aData.name}</h2>
               <img src="${aData.imageUrl}"></img>
-              <h3>${aData.description}</h3>
-              <div class="rowPrice text-center"><h4>${aData.price}€</h4></div>
+              <p>${aData.description}</p>
+              <div class="rowPrice text-center"><span>${aData.price}€</span></div>
               <p>Référence: <div class="ref">${aData._id}</div></p>
               <a href="meuble.html?id=${aData._id}"><button class="clickProduct">CHOISIR</button></a>
           </div>

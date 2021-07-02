@@ -27,27 +27,39 @@ header {
 
 h2 {
   color: brown;
+  font-size: 45px !important;
   font-weight: bold !important;
 }
-@media all and (min-width: 1024px) {
+@media all and (max-width: 320px) {
+  h2 {
+    font-size: 40px !important;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1024px) {
   h2 {
     font-size: 25px !important;
   }
 }
 
-h3 {
+p {
   padding: 5px;
 }
 @media all and (min-width: 768px) {
-  h3 {
+  p {
     padding-left: 20%;
     padding-right: 20%;
   }
 }
 
 .rowPrice {
-  font-size: 25px;
   color: brown;
+  font-size: 45px !important;
+  font-weight: bold !important;
+}
+@media all and (min-width: 1024px) and (max-width: 1024px) {
+  .rowPrice {
+    font-size: 25px !important;
+  }
 }
 
 h4 {
@@ -248,16 +260,17 @@ input {
   background-color: white !important;
   margin: 30px;
 }
-.command h2 {
+.command h1 {
   color: black;
 }
 @media all and (max-width: 320px) {
-  .command h2 {
+  .command h1 {
     font-size: 1.5rem !important;
   }
 }
-.command h4 {
+.command span {
   font-size: 2rem !important;
+  font-weight: bold;
   color: red;
 }
 .command p {

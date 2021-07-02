@@ -6,11 +6,11 @@ const totalCommand = localStorage.getItem("totalCommand");
 //Intégration dans la page HTML des données
 
 const showFinalCommand = `
-<h2>Ma Commande:</h2>
+<h1>Ma Commande:</h1>
 <p>Le numéro de commande est:</p>
-<h4>${commandId}</h4>
+<span>${commandId}</span>
 <p>Le montant total est:</p>
-<h4>${totalCommand} €</h4>
+<span>${totalCommand}€</span>
 `
 container.insertAdjacentHTML("afterbegin", showFinalCommand);
 

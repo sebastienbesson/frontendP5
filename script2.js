@@ -38,8 +38,8 @@ fetch('http://localhost:3000/api/furniture/'+id)
     <div class="card text-center">
       <h2 class="card-title" id="nameProduct">${data.name}</h2>
         <img id="imageProduct" src="${data.imageUrl}"></img>
-        <h3 id="description">${data.description}</h3>
-        <div class="rowPrice text-center"><h4 id="price">${data.price}€</h4></div>
+        <p id="description">${data.description}</p>
+        <div class="rowPrice text-center"><span>${data.price}€</span></div>
         <p>Référence: <div class="ref">${data._id}</div></p>
         <h3 id="chooseVarnish">Choississez votre vernis:</br>
           <select name="varnish" id="varnish">

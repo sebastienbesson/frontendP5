@@ -14,12 +14,12 @@ let container = document.getElementById('container');
 let allcolumns = currentProduct.map(aCurrentProduct => {
    
  return`    
-  <div class="col-12 col-md-6 mt-4 mt-md-0 p-md-5">
+  <div class="col-12 col-md-${currentProduct.length==1?'12':'6'} mt-4 mt-md-0 p-md-5">
     <div class="card text-center">  
       <div class="card-body">
         <h2 class="card-title" id="basketNameProduct">${aCurrentProduct.name}</h2>
         <img src="${aCurrentProduct.image}"></img>
-        <div class="rowPrice text-center"><h4>${aCurrentProduct.price}€</h4></div>
+        <div class="rowPrice text-center"><span>${aCurrentProduct.price}€</span></div>
       </div>  
     </div>
   </div>
