@@ -46,7 +46,7 @@ console.log(finalPrice);
 
 const showFinalPrice = `
 <div class="finalPrice col-12 text-center">Mon total achat est de: <br>
-<H4>${finalPrice} €</H4>
+<h3 id="finalPriceResult">${finalPrice}€</h3>
 </div>
 `
 container.insertAdjacentHTML("beforeend", showFinalPrice);

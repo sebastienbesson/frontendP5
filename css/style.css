@@ -14,6 +14,11 @@ header {
 
 .nav-link {
   font-weight: bold;
+  color: black !important;
+}
+
+.active {
+  text-decoration: underline !important;
 }
 
 .row {
@@ -35,7 +40,7 @@ h2 {
     font-size: 40px !important;
   }
 }
-@media all and (min-width: 1024px) and (max-width: 1024px) {
+@media all and (min-width: 1024px) and (max-width: 1440px) {
   h2 {
     font-size: 25px !important;
   }
@@ -180,9 +185,16 @@ h1 {
 }
 
 #basketTitle {
-  background-color: burlywood;
+  color: brown;
+  background-color: #eed4b2;
   border: none;
-  font-size: 35px;
+  font-weight: bold;
+  font-size: 45px !important;
+}
+@media all and (min-width: 1024px) and (max-width: 1024px) {
+  #basketTitle {
+    font-size: 25px !important;
+  }
 }
 
 #basketNameProduct {
@@ -196,8 +208,23 @@ h1 {
 }
 
 .finalPrice {
-  text-align: center;
+  font-size: 1.5rem;
   font-weight: bold;
+}
+@media all and (min-width: 1440px) {
+  .finalPrice {
+    font-size: 2rem;
+  }
+}
+
+#finalPriceResult {
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media all and (min-width: 1440px) {
+  #finalPriceResult {
+    font-size: 2.5rem;
+  }
 }
 
 .clearBasket {
