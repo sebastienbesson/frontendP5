@@ -11,18 +11,19 @@ let currentProduct = productsUnit?JSON.parse(productsUnit):[];
 
 let container = document.getElementById('container');
 
-let allcolumns = currentProduct.map(aCurrentProduct => {
-   
- return`    
-  <div class="col-12 col-md-${currentProduct.length==1?'12':'6'} mt-4 mt-md-0 p-md-5">
-    <div class="card text-center">  
-      <div class="card-body">
-        <h2 class="card-title" id="basketNameProduct">${aCurrentProduct.name}</h2>
-        <img src="${aCurrentProduct.image}"></img>
-        <div class="rowPrice text-center"><span>${aCurrentProduct.price}€</span></div>
-      </div>  
+let allcolumns = currentProduct.map(aCurrentProduct => { 
+  return`    
+    <div class="col-12 col-md-${currentProduct.length==1?'12':'6'} mt-4 mt-md-0 p-md-5">
+      <div class="card text-center">  
+        <div class="card-body">
+          <h2 class="card-title" id="basketNameProduct">${aCurrentProduct.name}</h2>
+            <img src="${aCurrentProduct.image}"></img>
+              <div class="rowPrice text-center">
+                <span>${aCurrentProduct.price}€</span>
+              </div>
+        </div>  
+      </div>
     </div>
-  </div>
  `
 }).join("")
 
@@ -31,32 +32,39 @@ container.insertAdjacentHTML("afterbegin",allcolumns)
 //Calcul du montant total du panier
 
 console.log(currentProduct);
+
 let totalPrice = [];
+
 for (let p = 0; p < currentProduct.length; p++){
   let totalPriceBasket = currentProduct[p].price;
   totalPrice.push(totalPriceBasket);
+
   console.log(totalPrice);
 }
 
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const finalPrice = totalPrice.reduce(reducer, 0);
+
 console.log(finalPrice);
 
 //Affichage HTML du montant total du panier
 
 const showFinalPrice = `
 <div class="finalPrice col-12 text-center">Mon total achat est de: <br>
-<span id="finalPriceResult">${finalPrice}€</span>
+  <span id="finalPriceResult">${finalPrice}€</span>
 </div>
 `
+
 container.insertAdjacentHTML("beforeend", showFinalPrice);
 
-//Récupération des produits sélectionnés
+//Récupération des ids des produits sélectionnés
 
 let totalProducts = [];
+
 for (let r = 0; r < currentProduct.length; r++){
   let totalProductsBasket = currentProduct[r].ref;
   totalProducts.push(totalProductsBasket);
+
   console.log(totalProducts);
 }
 
@@ -67,12 +75,14 @@ const clearBasket = `
 `
 container.insertAdjacentHTML("beforeend", clearBasket);
 
+
 const clearAllBasket = document.querySelector(".clearBasket");
 
 clearAllBasket.addEventListener('click', (e) => {
   e.preventDefault;
   localStorage.removeItem("productsUnit");
   alert("le panier est vide");
+
   window.location.href="panier.html";  
 });
 
@@ -123,41 +133,40 @@ if (error) {
   return false;
 } else {
   e.preventDefault();
-  const finalSend = {
-    products: totalProducts,
-    contact: {
-      lastName: lastName.value,
-      firstName: firstName.value,
-      email: email.value,
-      address: address.value,
-      city: city.value
+    const finalSend = {
+      products: totalProducts,
+      contact: {
+        lastName: lastName.value,
+        firstName: firstName.value,
+        email: email.value,
+        address: address.value,
+        city: city.value
+      }
     }
-  }
   console.log(finalSend);
 
 //Envoi des données du formulaire et des produits sélectionnés avec fetch
 
   fetch('http://localhost:3000/api/furniture/order', {
-        method: "POST",
-        headers:{
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(finalSend),
-      })
-      .then(function(response){
-        return response.json()
-      })
-      .then(function(finalSend){
-        console.log(finalSend);
-        console.log(finalSend.orderId);
-        localStorage.setItem("commandId", finalSend.orderId);
-        console.log(finalPrice);
-        localStorage.setItem("totalCommand", finalPrice);
-        window.location = "commande.html";
-      })
-      
-    }    
+    method: "POST",
+    headers:{
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(finalSend),
+  })
+  .then(function(response){
+    return response.json()
+  })
+  .then(function(finalSend){
+    console.log(finalSend);
+    console.log(finalSend.orderId);
+    localStorage.setItem("commandId", finalSend.orderId);
+    console.log(finalPrice);
+    localStorage.setItem("totalCommand", finalPrice);
+    window.location = "commande.html";
+  })
+}    
 });
 
 //Vérification avec Regex des données du formulaire
