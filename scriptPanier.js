@@ -118,7 +118,7 @@ if (!email.value) {
 if (!firstName.value) {
   error = "veuillez renseigner votre prénom";
 } else if(!firstNameValid(firstName.value)){
-  error = "votre prénom sans accent ni apostrophe!";
+  error = "votre prénom écrit sans accent";
 };  
 
 if (!lastName.value) {
@@ -172,7 +172,7 @@ if (error) {
 //Vérification avec Regex des données du formulaire
 
 function lastNameValid(lastName){
-  return /^[A-Z]+$/.test(lastName);
+  return /^[A-Z-]+$/.test(lastName);
 };
 
 function firstNameValid(firstName){
